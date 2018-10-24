@@ -1,0 +1,34 @@
+steps:
+- trigger: "${BUILDKITE_PIPELINE_SLUG}-end-to-end-tests-and-dependencies"
+  build:
+    branch: $BUILDKITE_BRANCH
+    commit: $BUILDKITE_COMMIT
+    message: $BUILDKITE_MESSAGE
+
+- label: Build playback
+  command: echo "build playback"
+
+- label: Build gensis
+  command: echo "build genesis"
+
+- label: Build gensis
+  command: echo "build genesis"
+
+- label: Build run_contract
+  command: echo "build run_contract"
+
+- label: Build web3 gateway benchmark
+  command: echo "build web3 gateway benchmark"
+
+- label: Build runtime benchmark
+  command: echo "build runtime benchmark"
+
+- wait
+
+- label: Deploy to staging
+  command: echo "build, tag, and publish staging image. Trigger deploy pipeline for staging env."
+
+- block: "hold-for-production"
+
+- label: Deploy to production
+  command: echo "Promote staging tag to production. Trigger deploy pipeline for production env."

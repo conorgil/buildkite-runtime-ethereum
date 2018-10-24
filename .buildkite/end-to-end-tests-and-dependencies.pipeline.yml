@@ -1,0 +1,13 @@
+- label: Build and test web3 gateway
+  command: echo "build and test web3 gateway. Publish gateway artifact."
+
+- label: Build and test runtime
+  command: echo "build and test runtime. Publish runtime-ethereum.so and runtime-ethereum.mrenclave."
+
+- label: Build ekiden-node
+  command: echo "build ekiden-node and publish it as an artifact."
+
+- wait
+
+- label: Run the end-to-end tests
+  command: echo "Download artifacts. Run the scripts for e2e tests."
