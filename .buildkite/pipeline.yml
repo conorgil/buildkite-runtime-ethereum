@@ -2,6 +2,9 @@ steps:
 - label: Who am I?
   command: echo $USER
 
+- label: Docker test
+  command: docker run --rm -i -t ubuntu sleep 5
+
 - trigger: "${BUILDKITE_PIPELINE_SLUG}-end-to-end-tests-and-dependencies"
   build:
     branch: $BUILDKITE_BRANCH
