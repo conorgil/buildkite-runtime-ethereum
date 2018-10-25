@@ -1,4 +1,7 @@
 steps:
+- label: Who am I?
+  command: echo $USER
+
 - trigger: "${BUILDKITE_PIPELINE_SLUG}-end-to-end-tests-and-dependencies"
   build:
     branch: $BUILDKITE_BRANCH
