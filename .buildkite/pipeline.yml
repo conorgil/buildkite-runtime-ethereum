@@ -3,7 +3,7 @@ steps:
   command: echo $USER
 
 - label: Docker test
-  command: docker run --rm -i -t ubuntu sleep 5
+  command: echo whoami && docker run --rm -i -t ubuntu sleep 5
 
 - trigger: "${BUILDKITE_PIPELINE_SLUG}-end-to-end-tests-and-dependencies"
   build:
