@@ -11,9 +11,6 @@ steps:
 - label: Build gensis
   command: echo "build genesis"
 
-- label: Build gensis
-  command: echo "build genesis"
-
 - label: Build run_contract
   command: echo "build run_contract"
 
